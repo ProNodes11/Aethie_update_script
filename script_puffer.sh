@@ -66,7 +66,9 @@ build/nimbus_beacon_node trustedNodeSync \
  --data-dir=build/data/shared_mainnet_0 \
  --trusted-node-url=https://mainnet-checkpoint-sync.stakely.io
 
-./run-mainnet-beacon-node.sh --web3-url=http://127.0.0.1:8551  --suggested-fee-recipient=$address --jwt-secret=/tmp/jwtsecret & PROGRAM_PID &
+./run-mainnet-beacon-node.sh --web3-url=http://127.0.0.1:8551 --suggested-fee-recipient=$address --jwt-secret=/tmp/jwtsecret &
+PROGRAM_PID=$!
+
 sleep 120
 
 kill $PROGRAM_PID
