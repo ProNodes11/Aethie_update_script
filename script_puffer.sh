@@ -107,5 +107,4 @@ dotnet build Nethermind.sln -c Release
 
 cd
 
-sudo apt update
-sudo apt install screen
+
