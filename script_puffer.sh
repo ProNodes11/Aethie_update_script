@@ -41,9 +41,10 @@ cargo build --release
 
 echo $password > password.txt
 
-modified_command=$(echo "$original_command" | sed 's|<PATH_TO_A_KEYSTORE_PASSWORD_FILE>|password.txt|g' | sed 's|<PATH_TO_REGISTRATION_JSON>|registration.json|g')
+command=$(echo "$command" | sed 's|<PATH_TO_A_KEYSTORE_PASSWORD_FILE>|password.txt|g')
 
-eval "$modified_command"
+command=$(echo "$command" | sed 's|<PATH_TO_REGISTRATION_JSON>|registration.json|g')
+eval "$command"
 
 cd
 
